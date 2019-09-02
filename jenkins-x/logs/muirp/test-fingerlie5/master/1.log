@@ -1,0 +1,76 @@
+
+Showing logs for build [32mmuirp-test-fingerlie5-master-vm5gl-1[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-6c285[0m
+{"level":"warn","ts":1567436039.305679,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1567436039.3067677,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mmuirp-test-fingerlie5-master-vm5gl-1[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-z9r4w[0m
+{"level":"warn","ts":1567436040.2711427,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1567436040.2724671,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /workspace/source /workspace/source/charts/test-fingerlie5\""}
+
+Showing logs for build [32mmuirp-test-fingerlie5-master-vm5gl-1[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mmuirp-test-fingerlie5-master-vm5gl-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-muirp-test-fingerlie5-master-mgp9t[0m
+{"level":"warn","ts":1567436046.3304434,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1567436047.4263513,"logger":"fallback-logger","caller":"git/git.go:102","msg":"Successfully cloned https://github.com/muirp/test-fingerlie5.git @ v0.0.2 in path /workspace/source"}
+
+Showing logs for build [32mmuirp-test-fingerlie5-master-vm5gl-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:f6a423ef9611a83b16a32ad82df63cae93532fa2
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mmuirp-test-fingerlie5-master-vm5gl-1[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Generated Git credentials file /workspace/xdg_config/git/credentials
+
+Showing logs for build [32mmuirp-test-fingerlie5-master-vm5gl-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-make-build[0m
+CGO_ENABLED=0 GO15VENDOREXPERIMENT=1 go build -ldflags '' -o bin/test-fingerlie5 main.go
+
+Showing logs for build [32mmuirp-test-fingerlie5-master-vm5gl-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+[36mINFO[0m[0000] No base image, nothing to extract            
+[36mINFO[0m[0000] cmd: EXPOSE                                  
+[36mINFO[0m[0000] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0000] Using files from context: [/workspace/source/bin] 
+[36mINFO[0m[0000] Skipping unpacking as no commands require it. 
+[36mINFO[0m[0000] Taking snapshot of full filesystem...        
+[36mINFO[0m[0000] EXPOSE 8080                                  
+[36mINFO[0m[0000] cmd: EXPOSE                                  
+[36mINFO[0m[0000] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0000] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0000] ENTRYPOINT ["/test-fingerlie5"]              
+[36mINFO[0m[0000] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0000] Using files from context: [/workspace/source/bin] 
+[36mINFO[0m[0000] COPY ./bin/ /                                
+[36mINFO[0m[0000] Taking snapshot of files...                  
+2019/09/02 14:54:18 pushed blob: sha256:cb036e7dcaa372f76750612dbb5dfdcc2c3a6f11eb5eb50210c293ebe984abee
+2019/09/02 14:54:18 pushed blob: sha256:7f7ec2eceb39239134329638e7938eb0977a64bbb076adfe946fd089cab81d58
+2019/09/02 14:54:20 gcr.io/apps-dev-229310/test-fingerlie5:0.0.2: digest: sha256:9ad4c0dda43acf3a66ec9a154d6c688eb22333f1e3aa9f8d4f2ea753092130fb size: 428
+
+Showing logs for build [32mmuirp-test-fingerlie5-master-vm5gl-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-post-build[0m
+no CVE provider running in the current ******* namespace so skip adding image to be analysed
+
+Showing logs for build [32mmuirp-test-fingerlie5-master-vm5gl-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-changelog[0m
+Converted /workspace/source/charts/test-fingerlie5 to an unshallow repository
+Generating change log from git ref 5bbc64ee3fa72f7c4f3f44fdda71269f4d46aea6 => af6ba10b972bc78b987b35aa0d54b9a5d040204b
+WARNING: No release found for muirp/test-fingerlie5 and tag v0.0.2 so creating a new release
+Updated the release information at https://github.com/muirp/test-fingerlie5/releases/tag/v0.0.2
+generated: /workspace/source/charts/test-fingerlie5/templates/release.yaml
+Created Release test-fingerlie5-0-0-2 resource in namespace *******
+Updating PipelineActivity muirp-test-fingerlie5-master-1 with version 0.0.2
+Updated PipelineActivities muirp-test-fingerlie5-master-1 with release notes URL: https://github.com/muirp/test-fingerlie5/releases/tag/v0.0.2
+
+Showing logs for build [32mmuirp-test-fingerlie5-master-vm5gl-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-helm-release[0m
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository jenkins-x-chartmuseum.
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Uploading chart file test-fingerlie5-0.0.2.tgz to http://jenkins-x-chartmuseum:8080/api/charts
+Received 201 response: {"saved":true}
+
+Showing logs for build [32mmuirp-test-fingerlie5-master-vm5gl-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-jx-promote[0m
+WARNING: prow based install so skip waiting for the merge of Pull Requests to go green as currently there is an issue with gettingstatuses from the PR, see https://github.com/jenkins-x/jx/issues/2410
+Promoting app test-fingerlie5 version 0.0.2 to namespace *******-staging
+Created Pull Request: https://github.com/muirp/environment-fingertide-staging/pull/11
+Added label  to Pull Request https://github.com/muirp/environment-fingertide-staging/pull/11
+Pull Request https://github.com/muirp/environment-fingertide-staging/pull/11 is merged at sha 89bae944cb2c21a746dda480b9cd69ea7ece73b7
+Pull Request merged but we are not waiting for the update pipeline to complete!
+WARNING: Could not find the service URL in namespace *******-staging for names test-fingerlie5, *******-test-fingerlie5, *******-staging-test-fingerlie5
